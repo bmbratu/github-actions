@@ -21,7 +21,10 @@ jobs:
       - name: current directory with powershell
         run: Get-Location
       - name: current directory with bash
-        run: pwd
+        run: |
+          pwd
+          echo "Hello world from GitHub Actions!"
+          echo "GITHUB SHA: ${GITHUB_SHA}"
         shell: bash
       - name: print some default env variables
         run: |
@@ -34,4 +37,5 @@ jobs:
           echo "GITHUB_REPOSITORY: ${GITHUB_REPOSITORY}"
           echo "GITHUB_EVENT_NAME: ${GITHUB_EVENT_NAME}"
           echo "GITHUB_WORKSPACE: ${GITHUB_WORKSPACE}"
+          echo "GITHUB_SHA: ${GITHUB_SHA}"
         shell: bash
